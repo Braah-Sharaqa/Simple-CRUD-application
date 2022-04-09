@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <section>
+      <div id="allquotes">
+      <h1>ADD New Quotes</h1>
+      </div>
+      <form action="/all-quotes" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="quotes">Quotes:</label>
+        <input type="quotes" id="quotes" name="quotes" required />
+
+        <button class="create">ADD</button>
+      </form>
+    </section>
+
+    <h2>ALL QUOTES</h2>
+    <ul>
+      <% Arrayquotes.forEach(item=> { %>
+      <li>
+        <span><%= item.name %></span>:
+        <!-- Output quote from the iterated quote object -->
+        <span><%= item.quotes %></span>
+      </li>
+
+      <% }); %>
+    </ul>
+    <!-- update -->
+    <div>
+      <h2>Darth Vadar invades!</h2>
+      <p>Replace first Yoda's quote with a quote written by Darth Vadar</p>
+      <button id="update-button">Replace Yoda's quote</button>
+    </div>
+    <!-- Delete -->
+
+    <div>
+      <h2>Remove Darth Vadar!</h2>
+      <p>
+        Delete one Darth Vadar's quote. Does nothing if there are no more Darth
+        Vadar's quote
+      </p>
+      <button id="delete-button">Delete Darth Vadar's quote</button>
+    </div>
+    <div id="message"></div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
